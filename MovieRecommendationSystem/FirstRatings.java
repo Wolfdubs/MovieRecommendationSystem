@@ -11,7 +11,7 @@ import org.apache.commons.csv.*;
 
 public class FirstRatings {
     
-    private ArrayList<Movie> loadMovies(String filename){
+    protected ArrayList<Movie> loadMovies(String filename){
         ArrayList<Movie> movies = new ArrayList<>();
         
         FileResource fr = new FileResource(filename);
@@ -77,7 +77,7 @@ public class FirstRatings {
         System.out.println("Directors who directed = " + maxDirectorCount + " movies = " + directors);
     }
     
-    private ArrayList<Rater> loadRaters(String filename){
+    protected ArrayList<Rater> loadRaters(String filename){
         ArrayList<Rater> raterList = new ArrayList<>();
         
         FileResource fr = new FileResource(filename);
