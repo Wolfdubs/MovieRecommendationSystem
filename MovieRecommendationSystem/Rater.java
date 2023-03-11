@@ -16,8 +16,13 @@ public class Rater {
         myID = id;
         myRatings = new ArrayList<Rating>();
     }
+    
+    public Rater(String id, ArrayList<Rating> ratings) {
+        myID = id;
+        myRatings = ratings;
+    }
 
-    public void addRating(String item, double rating) {
+    public void addRating(String item, double rating) {   //item is the IMDB code for the movie
         myRatings.add(new Rating(item,rating));
     }
 
