@@ -73,13 +73,17 @@ public class MovieRunnerSimilarRatings {
         
         ArrayList<Rating> ratings = fr.getSimilarRatings("65",20,5) ;
         //Collections.sort(ratings);
-        for (Rating rating : ratings){
-            String movieID = rating.getItem();
+
+        int limitOfNumberOfRecommendations = 15;
+        for (int i = 0; i < Math.min(limitOfNumberOfRecommendations, ratings.size()); i++){
+            String movieID = ratings.get(i).getItem();
             String ratingMovieTitle = MovieDatabase.getTitle(movieID);
-            System.out.println(rating.getValue() + "\t" + ratingMovieTitle);
+            System.out.printf("%d %.2f %s \n", i+1, ratings.get(i).getValue(), ratingMovieTitle); 
         }
         System.out.println("Length of list of rated movies returned: " + ratings.size());
     }
+    
+
     
     
 
