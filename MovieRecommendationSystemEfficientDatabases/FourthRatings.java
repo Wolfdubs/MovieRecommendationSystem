@@ -172,7 +172,7 @@ public class FourthRatings {
             double weightedAverage = 0;
             double sum = 0;
             int ratersCount = 0;
-            for (int i = 0; i < numSimilarRaters; i++){
+            for (int i = 0; i < Math.min(numSimilarRaters,similarRatings.size()); i++){
                 Rating currentRating = similarRatings.get(i);
                 double currentRatingWeight = currentRating.getValue();
                 String currentRaterID = currentRating.getItem();
